@@ -39,6 +39,7 @@
             var buttonName = "../view/AddProduct.fxml";
 
             //Get the button clicked by comparing with the node in event
+            //This was hard, I tried getting the id, but figured out the node should be compared with the button
             Node node = (Node) event.getTarget();
             if(node.equals(addPartsButton))
                 buttonName = "../view/AddPart.fxml";
