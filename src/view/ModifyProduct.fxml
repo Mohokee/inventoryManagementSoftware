@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane prefHeight="405.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductController">
    <children>
       <VBox layoutX="-2.0" prefHeight="400.0" prefWidth="299.0">
          <children>
@@ -161,7 +161,7 @@
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
               <buttons>
                 <Button mnemonicParsing="false" text="Save" />
-                  <Button layoutX="302.0" layoutY="17.0" mnemonicParsing="false" text="Cancel" />
+                  <Button layoutX="302.0" layoutY="17.0" mnemonicParsing="false" onAction="#cancelAdd" text="Cancel" />
               </buttons>
                <VBox.margin>
                   <Insets right="20.0" />
