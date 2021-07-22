@@ -16,8 +16,7 @@
     import javafx.scene.control.TableView;
     import javafx.scene.control.cell.PropertyValueFactory;
     import javafx.stage.Stage;
-    import model.Part;
-    import model.Product;
+    import model.*;
 
     import java.io.IOException;
     import java.net.URL;
@@ -32,14 +31,14 @@
         public TableColumn partName;
         public TableColumn partInventory;
         public TableColumn partCost;
-        public TableView allParts;
+        public TableView<Part> allParts;
 
         //Product Table Column ID'S
         public TableColumn productId;
         public TableColumn productName;
         public TableColumn productInventory;
         public TableColumn productCost;
-        public TableView allProducts;
+        public TableView<Product> allProducts;
 
         //Parts Buttons
         @FXML private Button addPartsButton;
@@ -57,11 +56,27 @@
         //Products Observable list
         private ObservableList<Product> allProduct = FXCollections.observableArrayList();
 
+        //Error alert
+        Alert a = new Alert(Alert.AlertType.WARNING,"No item selected.");
+
         /*exitButtonPushed- Closes Program, changes: started with (ActionEvent) event as argument, and kept getting an
         error, changed to (Event event) and it now works*/
         public void exitButtonPushed(Event event){
 
             System.exit(0);
+        }
+        //Delete Button
+        public void deletePart(Event event){
+            Part toBeDeleted = (Part) allParts.getSelectionModel().getSelectedItem();
+            if(toBeDeleted == null)
+                a.show();
+            allPart.remove(toBeDeleted);
+        }
+        public void deleteProduct(Event event){
+            Product toBeDeleted = (Product) allProducts.getSelectionModel().getSelectedItem();
+            if(toBeDeleted == null)
+                a.show();
+            allProduct.remove(toBeDeleted);
         }
         /*Change to Scene Controls*/
         public void buttonPushed(Event event) throws IOException {
@@ -88,10 +103,9 @@
             window.show();
         }
 
-        //Test Data
-        Product bike = new Product(1,"Bicycle",350,4,1,8);
 
         @Override
+
         public void initialize(URL url, ResourceBundle resourceBundle) {
             //Populate Parts table with Part objects
             allParts.setItems(allPart);
@@ -109,6 +123,15 @@
             productInventory.setCellValueFactory(new PropertyValueFactory<>("stock"));
             productCost.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+            //Test Data
+            Product bike = new Product(1,"Bicycle",350,4,1,8);
+            allProduct.add(bike);
+            Product helmet = new Product(2,"Helmet,green",25.50,5,2,10);
+            allProduct.add(helmet);
+            InHouse breaks = new InHouse(1,"breaks",7.50,6,3,9,12);
+            allPart.add(breaks);
+            Outsourced tires = new Outsourced(1,"Tires",50.00,10,2,20,"Wilson");
+            allPart.add(tires);
         }
 
     }

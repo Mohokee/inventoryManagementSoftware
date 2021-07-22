@@ -37,7 +37,7 @@
               <buttons>
                 <Button fx:id="addPartsButton" mnemonicParsing="false" onAction="#buttonPushed" text="Add" />
                   <Button fx:id="modifyPartsButton" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" onAction="#buttonPushed" text="Modify" />
-                  <Button fx:id="deletePartsButton" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="deletePartsButton" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" onAction="#deletePart" text="Delete" />
               </buttons>
             </ButtonBar>
          </children>
@@ -62,7 +62,7 @@
                <buttons>
                   <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#buttonPushed" text="Add" />
                   <Button fx:id="modifyProductButton" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" onAction="#buttonPushed" text="Modify" />
-                  <Button fx:id="deleteProductButton" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="deleteProductButton" layoutX="238.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteProduct" text="Delete" />
                </buttons>
             </ButtonBar>
          </children>

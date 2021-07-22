@@ -16,12 +16,12 @@ public class Inventory extends Application {
 
     //Add Part
     public static void addPart(Part newPart){
-
+    allParts.add(newPart);
     }
 
     //Add Product
     public static void addProduct(Product newProduct){
-
+    allProducts.add(newProduct);
     }
     //Look up Parts
     public static Part lookupPart(int partId){
@@ -53,11 +53,11 @@ public class Inventory extends Application {
     }
     //Get all parts list
     public static ObservableList<Part> getAllParts(){
-    return null;
+    return allParts;
     }
     //Get all products list
     public static ObservableList<Product> getAllProducts(){
-    return null;
+    return allProducts;
     }
 
 
