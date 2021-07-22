@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public class Inventory extends Application {
@@ -23,19 +25,19 @@ public class Inventory extends Application {
     }
     //Look up Parts
     public static Part lookupPart(int partId){
-
+    return null;
     }
     //Look up Product
     public static Product lookupProduct(int productId){
-
+        return null;
     }
     //Lookup part list
     public static ObservableList<Part> lookupPart(String partName){
-
+    return null;
     }
     //Look up product list
     public static ObservableList<Product> lookupProduct(String productName){
-
+    return null;
     }
     //Update part
     public static void updateProduct(int index, Part selectedPart){
@@ -51,11 +53,11 @@ public class Inventory extends Application {
     }
     //Get all parts list
     public static ObservableList<Part> getAllParts(){
-
+    return null;
     }
     //Get all products list
     public static ObservableList<Product> getAllProducts(){
-
+    return null;
     }
 
 
@@ -63,12 +65,13 @@ public class Inventory extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../view/MainScreen.fxml"));
         primaryStage.setTitle("Inventory");
-        primaryStage.setScene(new Scene(root, 680, 500));
+        primaryStage.setScene(new Scene(root, 750, 480));
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }
